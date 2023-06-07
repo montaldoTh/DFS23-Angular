@@ -2,12 +2,17 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AccueilComponent } from './pages/accueil/accueil.component';
 import { ConnexionComponent } from './pages/connexion/connexion.component';
+import { EditProductComponent } from './pages/edit-product/edit-product.component';
+import { authGuard } from './service/auth.guard';
+import { Error404Component } from './pages/error404/error404.component';
 
 const routes: Routes = [
-  {path: 'accueil', component: AccueilComponent},
+  {path: 'home', component: AccueilComponent},
   {path: 'connexion', component: ConnexionComponent},
-  // {path: '', redirectTo: "home", pathMatch: 'full'},
-  // {path: '**',}
+  {path: 'add-product', component: EditProductComponent, canActivate: [authGuard]},
+  {path: 'edit-product/:id', component: EditProductComponent, canActivate: [authGuard]},
+  {path: '', redirectTo: "home", pathMatch: 'full'},
+  {path: '**', component: Error404Component}
 
 ];
 

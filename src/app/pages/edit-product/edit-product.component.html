@@ -1,0 +1,33 @@
+<form (ngSubmit)="onProductAdd()" [formGroup]="formulaire">
+  <mat-form-field>
+    <mat-label>Nom du produit</mat-label>
+    <input matInput formControlName="nom">
+    <mat-error *ngIf="formulaire.get('nom')?.hasError('required')">Le titre est obligatoire</mat-error>
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Nombre de Calorie</mat-label>
+    <input matInput formControlName="calorie">
+    <mat-error *ngIf="formulaire.get('calorie')?.hasError('required')">Il est obligatoire d'ajouter le nombre de Calorie</mat-error>
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Nombre de Lipide</mat-label>
+    <input matInput formControlName="lipide">
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Nombre de Glucide</mat-label>
+    <input matInput formControlName="glucide">
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Nombre de Proteine</mat-label>
+    <input matInput formControlName="proteine">
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Image</mat-label>
+    <input matInput formControlName="image">
+  </mat-form-field>
+</form>
