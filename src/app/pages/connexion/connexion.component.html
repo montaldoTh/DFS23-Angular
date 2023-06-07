@@ -1,0 +1,20 @@
+<form class="d-flex flex-column">
+  <mat-form-field>
+    <mat-label>Email</mat-label>
+    <input matInput formControlName="email" />
+    <mat-error>Email Obligatoire</mat-error>
+    <mat-error>Email est mal formé (handicap internationnal)</mat-error>
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Mot de passe</mat-label>
+    <input matInput type="password" formControlName="password" />
+    <mat-error>Mot de passe Obligatoire</mat-error>
+  </mat-form-field>
+
+  <div class="d-flex flex-row justify-content-around">
+    <button mat-raised-button type="submit" color="primary">Connection</button>
+    <button mat-raised-button type="submit" color="accent">inscription</button>
+  </div>
+</form>
+
