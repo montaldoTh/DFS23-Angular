@@ -1,0 +1,59 @@
+[
+  {
+    "_id": "4dc25a18-bab2-4db7-a32d-17f026450cea",
+    "colId": "history",
+    "containerId": "",
+    "name": "http://localhost:3000/signup",
+    "url": "http://localhost:3000/signup",
+    "method": "GET",
+    "sortNum": 0,
+    "created": "2023-06-07T13:31:57.824Z",
+    "modified": "2023-06-07T13:31:57.824Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n  \"email\": \"admin@admin.com\",\n  \"password\": \"admin\",\n  \"admin\": 1\n}",
+      "form": []
+    },
+    "tests": []
+  },
+  {
+    "_id": "5e192129-cc34-4517-a2e8-54c2cafdd7d5",
+    "colId": "history",
+    "containerId": "",
+    "name": "http://localhost:3000/products",
+    "url": "http://localhost:3000/products",
+    "method": "GET",
+    "sortNum": 0,
+    "created": "2023-06-07T13:32:31.130Z",
+    "modified": "2023-06-07T13:32:31.130Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n  \"email\": \"admin@admin.com\",\n  \"password\": \"admin\",\n  \"admin\": 1\n}",
+      "form": []
+    },
+    "tests": []
+  },
+  {
+    "_id": "71cfe069-7407-4e0d-bb93-95b842fc9e41",
+    "colId": "history",
+    "containerId": "",
+    "name": "http://localhost:3000/signup",
+    "url": "http://localhost:3000/signup",
+    "method": "POST",
+    "sortNum": 0,
+    "created": "2023-06-07T13:32:45.298Z",
+    "modified": "2023-06-07T13:32:45.298Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n  \"email\": \"admin@admin.com\",\n  \"password\": \"admin\",\n  \"admin\": 1\n}",
+      "form": []
+    },
+    "tests": []
+  }
+]
