@@ -1,4 +1,4 @@
-<form (ngSubmit)="onProductAdd()" [formGroup]="formulaire">
+<form (ngSubmit)="onProductAdd()" [formGroup]="formulaire" class="d-flex flex-column">
   <mat-form-field>
     <mat-label>Nom du produit</mat-label>
     <input matInput formControlName="nom">
@@ -14,20 +14,30 @@
   <mat-form-field>
     <mat-label>Nombre de Lipide</mat-label>
     <input matInput formControlName="lipide">
+    <mat-error>Il peut être intéressant d'ajouter le nombre de Lipide</mat-error>
   </mat-form-field>
 
   <mat-form-field>
     <mat-label>Nombre de Glucide</mat-label>
     <input matInput formControlName="glucide">
+    <mat-error>Il peut être intéressant d'ajouter le nombre de Glucide</mat-error>
   </mat-form-field>
 
   <mat-form-field>
     <mat-label>Nombre de Proteine</mat-label>
     <input matInput formControlName="proteine">
+    <mat-error>Il peut être intéressant d'ajouter le nombre de Proteine</mat-error>
   </mat-form-field>
 
-  <mat-form-field>
-    <mat-label>Image</mat-label>
-    <input matInput formControlName="image">
-  </mat-form-field>
+  <app-selecteur-img txtImgUnselected="Aucun fichier selectionné" [miniature]="edtdProduct?.image ? 'http://localhost:3000' + edtdProduct?.image : null" (fileChanged)="onSelectedImg($event)"></app-selecteur-img>
+
+  <div class="mt-5">
+    <button mat-raised-button type="submit" color="primary">
+      {{ edtdProduct ? "Modifier" : "Ajouter" }}
+    </button>
+
+    <a mat-raised-button class="ms-2" routerLink="/home" color="warn">
+      Annuler
+    </a>
+  </div>
 </form>

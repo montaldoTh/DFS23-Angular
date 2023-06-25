@@ -1,0 +1,35 @@
+<h1>FF (forfeit) POUR L'INSTANT</h1>
+
+<form class="d-flex flex-column" (ngSubmit)="onUserAdd()" [formGroup]="formulaire">
+  <mat-form-field>
+    <mat-label>E-Mail</mat-label>
+    <input matInput formControlName="email" [value]="edtdUser?.email">
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Mot de passe</mat-label>
+    <input matInput formControlName="password" type="password">
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Nom</mat-label>
+    <input matInput formControlName="nom">
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Prénom</mat-label>
+    <input matInput formControlName="prenom">
+  </mat-form-field>
+
+  <app-selecteur-img txtImgUnselected="Aucune image de profil selectionné" [miniature]="edtdUser?.image ? 'http://localhost:3000/' + edtdUser?.image : null" (fileChanged)="onSelectedImg($event)"></app-selecteur-img>
+
+  <div class="mt-5">
+    <button mat-raised-button type="submit" color="primary">
+      {{ edtdUser ? "Modifier" : "S'inscrire" }}
+    </button>
+
+    <a mat-raised-button class="ms-2" routerLink="/home" color="warn">
+      Annuler
+    </a>
+  </div>
+</form>

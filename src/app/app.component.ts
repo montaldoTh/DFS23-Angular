@@ -15,4 +15,8 @@ export class AppComponent {
   constructor(private auth: AuthentificationService){
     this.auth.$jwt.subscribe((jwt) => this.jwt = jwt)
   }
+
+  unlog() {
+    this.auth.logout();
+  }
 }

@@ -1,0 +1,48 @@
+<div *ngIf="jwt" class="container">
+  <div class="row d-flex align-items-center my-5">
+    <div class="col-10">
+      <h1>{{ jwt.nom + ' ' + jwt.prenom }}<mat-icon *ngIf="jwt.admin == true" fontIcon="verified_user" class="mx-2" /></h1>
+
+    </div>
+    <a class="col-2" mat-raised-button routerLink="/settings"><mat-icon fontIcon="settings" /> Réglages</a>
+  </div>
+
+  <div class="info-cont">
+    <div class="row" id="conso">
+      <h2>Quelques stats</h2>
+      <div class="container">
+        <div class="row">
+          <div class="col-4">
+            <p>Nombre de repas : <span>Aucun repas enregistré</span></p>
+
+          </div>
+          <div class="col-4">
+            <p>Calorie consommé : <span>Aucune calorie enregistré</span></p>
+          </div>
+          <div class="col-4">
+            <p>Glucide consommé : <span>Aucune calorie enregistré</span></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row" id="informations">
+      <h2>Informations Personnel</h2>
+      <div class="container">
+        <div class="row">
+          <div class="col-6">
+            <p>Votre nom : <span *ngIf="jwt.nom">{{ jwt.nom }}</span></p>
+          </div>
+          <div class="col-6">
+            <p>Votre prénom : <span *ngIf="jwt.prenom">{{ jwt.prenom }}</span></p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12">
+            <p>Votre email : <span *ngIf="jwt.email">{{ jwt.email }}</span></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

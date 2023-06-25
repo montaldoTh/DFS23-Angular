@@ -1,0 +1,38 @@
+.img{
+  background-color: tomato;
+  min-height: 225px;
+  min-width: 225px;
+  border-radius: 7px;
+}
+
+#conso{
+  background-color: #7cffbd7a;
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
+  padding: 50px 15px;
+  max-height: 100%;
+  position: relative;
+  z-index: -1;
+}
+
+#informations{
+  background-color: #e2e2e2;
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
+  padding: 50px 15px;
+  max-height: 100%;
+  position: relative;
+  z-index: 0;
+  bottom: 20px
+}
+
+#autre{
+  background-color: #797979;
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
+  padding: 50px 15px;
+  max-height: 100%;
+  position: relative;
+  z-index: 1;
+  bottom: 40px
+}

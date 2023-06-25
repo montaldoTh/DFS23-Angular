@@ -3,4 +3,6 @@ export interface Jwt {
   email: string;
   exp: number;
   iat: number;
+  nom: string;
+  prenom: string;
 }

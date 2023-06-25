@@ -13,9 +13,9 @@ export class EditProductComponent {
   formulaire: FormGroup = this.formBuilder.group({
     nom: ['', [Validators.required]],
     calorie: ['', [Validators.required]],
-    lipide: ['', [Validators.required]],
-    glucide: ['', [Validators.required]],
-    proteine: ['', [Validators.required]],
+    lipide: [''],
+    glucide: [''],
+    proteine: [''],
     image: [''],
   })
 
@@ -49,6 +49,7 @@ export class EditProductComponent {
   onProductAdd(){
     if(this.formulaire.valid){
       if(this.edtdProduct){
+
         const formData: FormData = new FormData()
 
         formData.append('product', JSON.stringify(this.formulaire.value))
@@ -57,9 +58,23 @@ export class EditProductComponent {
           formData.append('fichier', this.selectedFile)
         }
 
-        this.http.put('http://localhost:3000/product', formData).subscribe({
+        this.http.put('http://localhost:3000/product/' + this.edtdProduct.id , formData).subscribe({
           next: (res) => this.router.navigateByUrl('/home'),
-          error: (res) => alert(res.error)
+          error: (res) => console.log(res.error)
+        })
+      } else {
+
+        const formData: FormData = new FormData()
+
+        formData.append('product', JSON.stringify(this.formulaire.value))
+
+        if(this.selectedFile){
+          formData.append('fichier', this.selectedFile)
+        }
+
+        this.http.post('http://localhost:3000/product', formData).subscribe({
+          next: (res) => this.router.navigateByUrl('/home'),
+          error: (res) => console.log(res.error)
         })
       }
     }

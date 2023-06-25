@@ -1,0 +1,12 @@
+<input #inputFile type="file" name="picture" id="picture" style="display:none;" (change)="onFileChange($event)">
+<div class="d-flex align-items-center">
+  <button mat-fab (click)="$event.preventDefault(); inputFile.click()" class="mx-3" color="secondary">
+    <mat-icon fontIcon="attach_file"></mat-icon>
+  </button>
+
+  <span>
+    {{ selectedFile?.name || txtImgUnselected }}
+  </span>
+
+  <img *ngIf="miniature != null && miniature !='' " [src]="miniature">
+</div>

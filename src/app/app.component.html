@@ -1,15 +1,30 @@
 <!-- HEADER -->
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
-  <div class="container-fluid">
-    <a class="navbar-brand">Diet Plus</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-      <div class="navbar-nav">
-        <a class="nav-link" routerLink="/home" routerLinkActive="active">Accueil</a>
-        <a class="nav-link" routerLink="/connexion" routerLinkActive="active">Connexion</a>
+  <div class="container-fluid d-flex">
+    <div class="d-flex flex-row">
+      <a class="navbar-brand" routerLink="/home">Diet Plus</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          <a *ngIf="jwt" class="nav-link" routerLink="/product-list" routerLinkActive="active">Liste Produit</a>
+          <a *ngIf="jwt?.admin" class="nav-link" routerLink="/user-list" routerLinkActive="active">Liste Utilisateurs</a>
+        </div>
       </div>
+    </div>
+    <div>
+      <button *ngIf="jwt" mat-button [matMenuTriggerFor]="menu">
+        <mat-icon fontIcon="manage_accounts"></mat-icon>
+      </button>
+      <mat-menu #menu="matMenu">
+        <a mat-menu-item routerLink="/profil">Profil</a>
+        <a mat-menu-item (click)="unlog()">Déconnexion</a>
+      </mat-menu>
+
+      <a *ngIf="!jwt" class="nav-link" routerLink="/connexion" routerLinkActive="active">
+        <mat-icon fontIcon="person_add" />
+      </a>
     </div>
   </div>
 </nav>
